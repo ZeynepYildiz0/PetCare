@@ -1,65 +1,65 @@
 # 🐾 PetCare – Veterinary Clinic Management System
 
-PetCare, veteriner kliniklerinin günlük operasyonlarını dijitalleştirmek ve kolaylaştırmak amacıyla geliştirilmiş bir yönetim sistemidir.  
-Randevu yönetimi, hasta takibi ve temel klinik süreçlerin daha düzenli yürütülmesini hedefler.
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Django](https://img.shields.io/badge/Django-Framework-green)
+![Status](https://img.shields.io/badge/Status-In_Progress-yellow)
+![License](https://img.shields.io/badge/License-Educational-lightgrey)
+
+PetCare is a web-based veterinary clinic management system designed to digitize and streamline daily clinical operations such as pet records, owner management, and appointment tracking.
+
+This project is developed as a **real-world software engineering practice**, focusing on system design, backend–frontend integration, and clean project architecture.
 
 ---
 
-## 🚀 Proje Amacı
+## 🎯 Project Objectives
 
-Bu proje, bir veteriner kliniğinde:
-- Hasta (pet) bilgilerinin düzenli tutulmasını
-- Sahip–pet ilişkisinin yönetilmesini
-- Randevu süreçlerinin dijitalleştirilmesini
-amaçlamaktadır.
+The main goals of this project are to:
 
-Aynı zamanda yazılım geliştirme sürecinde **gerçek bir sistem analizi ve uygulama pratiği** kazanmak hedeflenmiştir.
-
----
-
-## 🛠️ Kullanılan Teknolojiler
-
-- **Backend:** Python / Django  
-- **Frontend:** HTML, CSS, JavaScript  
-- **Database:** SQLite (geliştirme aşamasında)  
-- **Version Control:** Git & GitHub  
-
-> Proje geliştirme süreci devam etmektedir.
+- Manage pet and owner information in a structured way  
+- Digitize appointment scheduling processes  
+- Improve data accessibility for veterinary clinics  
+- Gain hands-on experience in full-stack web development  
 
 ---
 
-## 📂 Proje Yapısı
+## 🧠 What I Learned From This Project
+
+Through developing PetCare, I gained experience in:
+
+- Designing modular and scalable backend architecture  
+- Using Django for real-world CRUD operations  
+- Managing project versions with Git & GitHub  
+- Structuring backend and frontend integration  
+- Understanding basic system analysis and design principles  
+
+This project significantly improved my **problem-solving**, **code organization**, and **project planning** skills.
+
+---
+
+## 🛠️ Technologies Used
+
+| Layer        | Technologies |
+|-------------|--------------|
+| Backend     | Python, Django |
+| Frontend   | HTML, CSS, JavaScript |
+| Database   | SQLite (Development) |
+| Tools      | Git, GitHub, VS Code |
+
+---
+
+## 📂 Project Structure
 
 ```text
-petcare/
+PetCare/
 │
 ├── backend/
 │   ├── manage.py
-│   └── ...
+│   ├── apps/
+│   └── settings/
 │
 ├── frontend/
 │   ├── templates/
 │   └── static/
 │
-├── README.md
-└── requirements.txt
-
-## Run Backend
-```powershell
-cd C:\Users\zeynep\Desktop\petcare
-.\venv\Scripts\Activate.ps1
-.\venv\Scripts\python.exe -m pip install -r requirements.txt
-.\venv\Scripts\python.exe manage.py migrate
-.\venv\Scripts\python.exe manage.py runserver
-
-Frontend
-URL: http://localhost:5173/
-
-Demo Flow
-Register/Login (JWT)
-Add Pet
-Create Appointment
-User Isolation: each user sees only their own pets/appointments
-
-- Admin panel: `http://127.0.0.1:8000/admin/`
-- API Base env: `frontend/.env -> VITE_API_BASE=http://127.0.0.1:8000/api`
+├── requirements.txt
+└── README.md
