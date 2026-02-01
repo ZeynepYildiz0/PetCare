@@ -1,9 +1,48 @@
-# PetCare - Django REST + React (Vite)
+# 🐾 PetCare – Veterinary Clinic Management System
 
-## Tech Stack
-- Backend: Django + Django REST Framework + SimpleJWT
-- Frontend: React + Vite
-- DB: SQLite
+PetCare, veteriner kliniklerinin günlük operasyonlarını dijitalleştirmek ve kolaylaştırmak amacıyla geliştirilmiş bir yönetim sistemidir.  
+Randevu yönetimi, hasta takibi ve temel klinik süreçlerin daha düzenli yürütülmesini hedefler.
+
+---
+
+## 🚀 Proje Amacı
+
+Bu proje, bir veteriner kliniğinde:
+- Hasta (pet) bilgilerinin düzenli tutulmasını
+- Sahip–pet ilişkisinin yönetilmesini
+- Randevu süreçlerinin dijitalleştirilmesini
+amaçlamaktadır.
+
+Aynı zamanda yazılım geliştirme sürecinde **gerçek bir sistem analizi ve uygulama pratiği** kazanmak hedeflenmiştir.
+
+---
+
+## 🛠️ Kullanılan Teknolojiler
+
+- **Backend:** Python / Django  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Database:** SQLite (geliştirme aşamasında)  
+- **Version Control:** Git & GitHub  
+
+> Proje geliştirme süreci devam etmektedir.
+
+---
+
+## 📂 Proje Yapısı
+
+```text
+petcare/
+│
+├── backend/
+│   ├── manage.py
+│   └── ...
+│
+├── frontend/
+│   ├── templates/
+│   └── static/
+│
+├── README.md
+└── requirements.txt
 
 ## Run Backend
 ```powershell
