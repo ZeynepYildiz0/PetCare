@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCare – Add Pet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header>
+      <button class="menu" aria-label="Back" onclick="history.back()">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="brand">
+        <img src="images/paw-transparent.png" alt="PetCare logo" class="paw-icon">
+        PetCare
+      </div>
+    </header>
+
+    <main>
+      <section class="hero add-pet-page">
+        <h1 class="page-title">Add Pet Information</h1>
+        <p class="page-subtitle">Keep all details about your little friend in one place.</p>
+
+        <!-- PHOTO UPLOAD -->
+        <div class="form-block">
+          <label class="field-label">Pet Photo</label>
+          <div class="photo-wrapper">
+            <div id="photoPreview" class="photo-preview has-image"
+                 style="background-image:url('images/cat.jpeg');"></div>
+
+            <label class="upload-btn">
+              Choose Image
+              <input type="file" id="petPhoto" accept="image/*" hidden>
+            </label>
+          </div>
+        </div>
+
+        <!-- FORM FIELDS  -->
+        <div class="add-pet-form">
+          <div class="field-row">
+            <label class="field-label" for="pet-name">Pet’s name</label>
+            <input id="pet-name" type="text" class="input" placeholder="Minerva">
+          </div>
+
+          <div class="field-row">
+  <label class="field-label" for="pet-gender">Gender</label>
+  <select id="pet-gender" class="input">
+    <option value="female">Female</option>
+    <option value="male">Male</option>
+    <option value="unknown">Unknown</option>
+  </select>
+</div>
+
+          <div class="field-row">
+            <label class="field-label" for="pet-species">Species</label>
+            <input id="pet-species" type="text" class="input" placeholder="Cat / Dog">
+          </div>
+
+          <div class="field-row">
+            <label class="field-label" for="pet-birth">Birth Date</label>
+            <input id="pet-birth" type="date" class="input">
+          </div>
+
+          <div class="field-row">
+            <label class="field-label" for="pet-weight">Weight</label>
+            <input id="pet-weight" type="text" class="input" placeholder="e.g. 7.5 kg">
+          </div>
+
+          <div class="field-row">
+            <label class="field-label" for="pet-notes">Notes (optional)</label>
+            <textarea id="pet-notes" class="input textarea-input"
+                      placeholder="Allergies, favorite toys, vet notes…"></textarea>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn" type="button">Save</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2025 PetCare Clinic • Made with ♥</small>
+    </footer>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('petPhoto');
+    const preview = document.getElementById('photoPreview');
+
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+      const url = URL.createObjectURL(file);
+      preview.style.backgroundImage = `url(${url})`;
+      preview.classList.add('has-image');
+    });
+  </script>
+</body>
+</html>

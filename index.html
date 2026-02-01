@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCare – Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header>
+      <button class="menu" aria-label="Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="brand">
+        <img src="images/paw-transparent.png" alt="PetCare logo" class="paw-icon">
+        PetCare
+      </div>
+    </header>
+
+    <main>
+
+      <!-- DAILY REMINDER -->
+      <section class="hero" aria-label="Daily Reminder">
+        <h2>Daily Reminder</h2>
+        <p class="hero-subtitle">Never miss a meal or medication time.</p>
+
+        <div class="rem-row">
+          <div class="rem">
+            <span class="rem-label">Meal Times</span>
+            <b>09:00 • 15:00 • 21:00</b>
+          </div>
+          <div class="rem">
+            <span class="rem-label">Medication</span>
+            <b>15:00 • Insulin Injection</b>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="set-reminder.html" class="btn">Set Reminder</a>
+        </div>
+      </section>
+
+      <!-- FEATURE CARDS -->
+      <section class="grid" aria-label="Features">
+        <!-- ADD PET INFO -->
+        <a href="add-pet.html" class="feature-link">
+          <article class="feature" tabindex="0">
+            <div class="icon">
+              <img src="images/paw-transparent.png" class="paw-icon" alt="paw icon">
+            </div>
+
+            <h4>Add Pet Info</h4>
+            <span class="feature-desc">Name, gender, age, weight, notes…</span>
+          </article>
+        </a>
+
+        <!-- MY ACCOUNT -->
+        <a href="my-account.html" class="feature-link">
+          <article class="feature" tabindex="0">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4Z" />
+                <path d="M20 20a 8 8 0 1 0-16 0" />
+              </svg>
+            </div>
+            <h4>My Account</h4>
+            <span class="feature-desc">Manage your information</span>
+          </article>
+        </a>
+
+        <!-- MAKE APPOINTMENT -->
+        <a href="make-appointment.html" class="feature-link">
+          <article class="feature" tabindex="0">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="3" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+            </div>
+            <h4>Make An Appointment</h4>
+            <span class="feature-desc">See available times</span>
+          </article>
+        </a>
+
+        <!-- MY APPOINTMENTS -->
+        <a href="my-appointments.html" class="feature-link">
+          <article class="feature" tabindex="0">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </div>
+            <h4>My Appointments</h4>
+            <span class="feature-desc">Upcoming &amp; past appointments</span>
+          </article>
+        </a>
+      </section>
+
+      <!-- MY PETS -->
+      <section class="pets-wrapper">
+        <h2 class="pets-title">My Pets</h2>
+
+        <div class="pets-container">
+
+          <article class="pet-card">
+            <img src="images/cat.jpeg" alt="Minerva the cat">
+            <div class="pet-info">
+              <h3>Minerva</h3>
+              <small>Cat</small>
+              <p><b>Gender:</b> Female</p>
+              <p><b>Age:</b> 3 years old</p>
+              <p><b>Weight:</b> 7.72 lbs</p>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog.jpeg" alt="Karabaş the dog">
+            <div class="pet-info">
+              <h3>Karabaş</h3>
+              <small>Dog</small>
+              <p><b>Gender:</b> Male</p>
+              <p><b>Age:</b> 6 years old</p>
+              <p><b>Weight:</b> 12.32 lbs</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SLOGAN -->
+      <div class="slogan">
+        For the Little Souls That Make Our Lives Whole —
+        <br>Let PetCare Keep Them Happy and Healthy!
+      </div>
+
+    </main>
+
+    <footer>
+      <small>© 2025 PetCare Clinic • Made with ♥</small>
+    </footer>
+  </div>
+</body>
+
+</html>

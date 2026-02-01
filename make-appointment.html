@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCare – Make An Appointment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header>
+      <button class="menu" aria-label="Back" onclick="history.back()">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="brand">
+        <img src="images/paw-transparent.png" alt="PetCare logo" class="paw-icon">
+        PetCare
+      </div>
+    </header>
+
+    <main>
+      <section class="hero appointments-page">
+        <h1 class="page-title">Make An Appointment</h1>
+        <p class="page-subtitle">
+          Choose a date range, then pick a day and time for your visit.
+        </p>
+
+        <!-- DATE RANGE -->
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label" for="start-date">From</label>
+            <input id="start-date" type="date" class="input">
+          </div>
+          <div class="form-field">
+            <label class="field-label" for="end-date">To</label>
+            <input id="end-date" type="date" class="input">
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn" type="button" id="showDaysBtn">Show Available Days</button>
+        </div>
+
+        <!-- AVAILABLE DAYS + TIME SLOTS -->
+        <div class="form-block">
+          <label class="field-label">Available days</label>
+          <div id="dateList" class="date-list">
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn" type="button" id="confirmBtn" disabled>
+            Confirm Appointment
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2025 PetCare Clinic • Made with ♥</small>
+    </footer>
+  </div>
+
+  <script>
+    const showDaysBtn = document.getElementById('showDaysBtn');
+    const dateList = document.getElementById('dateList');
+    const confirmBtn = document.getElementById('confirmBtn');
+
+    let selectedSlotInfo = null;
+
+  
+    const slotTemplates = [
+      "08:30",
+      "09:00",
+      "09:30",
+      "10:00",
+      "10:30",
+      "11:00",
+      "11:30",
+      "13:00",
+      "13:30",
+      "14:00",
+      "14:30",
+      "15.00",
+      "15.30",
+      "16.00",
+      "16.30"
+    ];
+
+    function formatDateLabel(date) {
+      const opts = { weekday: 'short', day: '2-digit', month: 'short' };
+      return date.toLocaleDateString(undefined, opts);
+    }
+
+    function getDatesBetween(start, end) {
+      const dates = [];
+      const cur = new Date(start.getTime());
+      while (cur <= end) {
+        dates.push(new Date(cur.getTime()));
+        cur.setDate(cur.getDate() + 1);
+      }
+      return dates;
+    }
+
+    showDaysBtn.addEventListener('click', () => {
+      const startInput = document.getElementById('start-date').value;
+      const endInput = document.getElementById('end-date').value;
+
+      if (!startInput || !endInput) {
+        alert('Please select both start and end dates.');
+        return;
+      }
+
+      const start = new Date(startInput);
+      const end = new Date(endInput);
+
+      if (end < start) {
+        alert('End date must be after start date.');
+        return;
+      }
+
+      dateList.innerHTML = '';
+      selectedSlotInfo = null;
+      confirmBtn.disabled = true;
+
+      const allDates = getDatesBetween(start, end);
+
+      allDates.forEach((d) => {
+        const item = document.createElement('div');
+        item.className = 'date-item';
+
+        const header = document.createElement('button');
+        header.type = 'button';
+        header.className = 'date-header';
+
+        const left = document.createElement('div');
+        left.className = 'date-text';
+        left.innerHTML = `
+          <span class="date-title">${formatDateLabel(d)}</span>
+          <span class="date-sub">Tap to see available times</span>
+        `;
+
+        const arrow = document.createElement('span');
+        arrow.className = 'date-arrow';
+        arrow.textContent = '▾';
+
+        header.appendChild(left);
+        header.appendChild(arrow);
+
+        const slotsContainer = document.createElement('div');
+        slotsContainer.className = 'slots';
+
+       
+        slotTemplates.forEach((time, i) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'slot-btn';
+          btn.textContent = time;
+
+         
+          if (i % 3 === 2) {
+            btn.classList.add('disabled');
+            btn.disabled = true;
+          }
+
+          btn.addEventListener('click', () => {
+            if (btn.disabled) return;
+
+   
+            slotsContainer.querySelectorAll('.slot-btn').forEach(b => {
+              b.classList.remove('selected');
+            });
+            btn.classList.add('selected');
+
+            selectedSlotInfo = {
+              date: d.toISOString().split('T')[0],
+              time
+            };
+            confirmBtn.disabled = false;
+          });
+
+          slotsContainer.appendChild(btn);
+        });
+
+        header.addEventListener('click', () => {
+          const isOpen = item.classList.toggle('open');
+          arrow.textContent = isOpen ? '▴' : '▾';
+        });
+
+        item.appendChild(header);
+        item.appendChild(slotsContainer);
+        dateList.appendChild(item);
+      });
+    });
+
+    confirmBtn.addEventListener('click', () => {
+      if (!selectedSlotInfo) return;
+      alert(
+        `Appointment set for ${selectedSlotInfo.date} at ${selectedSlotInfo.time}`
+      );
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCare – My Appointments</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header>
+      <button class="menu" aria-label="Back" onclick="history.back()">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="brand">
+        <img src="images/paw-transparent.png" alt="PetCare logo" class="paw-icon">
+        PetCare
+      </div>
+    </header>
+
+    <main>
+      <section class="hero my-appointments-page">
+        <h1 class="page-title">My Appointments</h1>
+        <p class="page-subtitle">
+          See your upcoming visits and past appointments in one place.
+        </p>
+
+        <!-- UPCOMING -->
+        <div class="appointment-section">
+          <h2 class="section-title">Upcoming Appointments</h2>
+          <div class="appointment-list">
+
+            <article class="appointment-card upcoming">
+              <div class="appointment-row">
+                <div class="appointment-main">
+                  <span class="appointment-date">Mon, 24 Nov 2025 • 09:30</span>
+                  <span class="appointment-title">General Checkup</span>
+                </div>
+                <span class="badge badge-upcoming">Upcoming</span>
+              </div>
+              <div class="appointment-meta">
+                <span>Pet: Minerva</span>
+                <span>Vet: Dr. Sarah Miller</span>
+                <span>Clinic: PetCare Main</span>
+              </div>
+            </article>
+
+            <article class="appointment-card upcoming">
+              <div class="appointment-row">
+                <div class="appointment-main">
+                  <span class="appointment-date">Thu, 4 Dec 2025 • 14:00</span>
+                  <span class="appointment-title">Vaccination</span>
+                </div>
+                <span class="badge badge-upcoming">Upcoming</span>
+              </div>
+              <div class="appointment-meta">
+                <span>Pet: Karabaş</span>
+                <span>Vet: Dr. Alex Brown</span>
+                <span>Clinic: PetCare Downtown</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- PAST -->
+        <div class="appointment-section">
+          <h2 class="section-title">Past Appointments</h2>
+          <div class="appointment-list">
+
+            <article class="appointment-card past">
+              <div class="appointment-row">
+                <div class="appointment-main">
+                  <span class="appointment-date">Tue, 12 Aug 2025 • 11:00</span>
+                  <span class="appointment-title">Dental Cleaning</span>
+                </div>
+                <span class="badge badge-past">Completed</span>
+              </div>
+              <div class="appointment-meta">
+                <span>Pet: Minerva</span>
+                <span>Vet: Dr. Emily Stone</span>
+                <span>Notes: Next checkup in 6 months.</span>
+              </div>
+            </article>
+
+            <article class="appointment-card past">
+              <div class="appointment-row">
+                <div class="appointment-main">
+                  <span class="appointment-date">Fri, 30 May 2025 • 10:30</span>
+                  <span class="appointment-title">Skin Check</span>
+                </div>
+                <span class="badge badge-past">Completed</span>
+              </div>
+              <div class="appointment-meta">
+                <span>Pet: Karabaş</span>
+                <span>Vet: Dr. Noah Lee</span>
+                <span>Notes: Allergies under control.</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2025 PetCare Clinic • Made with ♥</small>
+    </footer>
+  </div>
+</body>
+</html>

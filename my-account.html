@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCare – My Account</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header>
+      <button class="menu" aria-label="Back" onclick="history.back()">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="brand">
+        <img src="images/paw-transparent.png" alt="PetCare logo" class="paw-icon">
+        PetCare
+      </div>
+    </header>
+
+    <main>
+      <section class="hero account-page">
+        <h1 class="page-title">My Account</h1>
+        <p class="page-subtitle">
+          View your account details and update your name or password.
+        </p>
+
+        <!-- EMAIL  -->
+        <div class="account-row">
+          <div class="account-main">
+            <span class="account-label">Email</span>
+            <p class="account-value">you@example.com</p>
+          </div>
+        </div>
+
+        <!-- NAME  -->
+        <div class="account-row">
+          <div class="account-main">
+            <label class="account-label" for="acc-name">Full Name</label>
+            <input id="acc-name" type="text" class="input"
+                   value="Your Name" />
+          </div>
+          <button class="btn-secondary" type="button">Change</button>
+        </div>
+
+        <!-- PASSWORD  -->
+        <div class="account-row">
+          <div class="account-main">
+            <label class="account-label" for="acc-password">Password</label>
+            <input id="acc-password" type="password" class="input"
+                   value="secret123" />
+          </div>
+          <button class="btn-secondary" type="button">Change</button>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn" type="button">Save Changes</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2025 PetCare Clinic • Made with ♥</small>
+    </footer>
+  </div>
+</body>
+</html>

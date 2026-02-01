@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCare – Set Reminder</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    
+    <!-- HEADER -->
+    <header>
+      <button class="menu" aria-label="Back" onclick="history.back()">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="brand">
+        <img src="images/paw-transparent.png" alt="PetCare logo" class="paw-icon">
+        PetCare
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reminder-page">
+        <h1 class="page-title">Set Reminder</h1>
+        <p class="page-subtitle">
+          Choose what kind of reminder you want and when it should alert you.
+        </p>
+
+        <!-- TYPE -->
+        <div class="form-block">
+          <label class="field-label">What kind of reminder?</label>
+          <div class="pill-group">
+            <label class="pill">
+              <input type="radio" name="type" value="appointment" checked>
+              <span>Appointment</span>
+            </label>
+            <label class="pill">
+              <input type="radio" name="type" value="meal">
+              <span>Meal</span>
+            </label>
+            <label class="pill">
+              <input type="radio" name="type" value="medication">
+              <span>Medication</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- DATE & TIME -->
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label" for="rem-date">Date</label>
+            <input id="rem-date" type="date" class="input">
+          </div>
+          <div class="form-field">
+            <label class="field-label" for="rem-time">Time</label>
+            <input id="rem-time" type="time" class="input">
+          </div>
+        </div>
+
+        <!-- FREQUENCY -->
+        <div class="form-block">
+          <label class="field-label">How often should it repeat?</label>
+          <select class="input">
+            <option value="once">Only once at this date & time</option>
+            <option value="daily">Every day at this time</option>
+            <option value="weekly">Every week on this weekday</option>
+          </select>
+        </div>
+
+        <!-- WEEKDAY -->
+        <div class="form-block">
+          <label class="field-label">Weekday (for weekly reminders)</label>
+          <select class="input">
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+          </select>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn save-reminder-btn" type="button">Save Reminder</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- mini success popup -->
+    <div id="toast" class="toast" role="status">
+      ✅ Reminder saved successfully!
+    </div>
+
+    <footer>
+      <small>© 2025 PetCare Clinic • Made with ♥</small>
+    </footer>
+  </div>
+
+  <script>
+    const saveBtn = document.querySelector('.save-reminder-btn');
+    const toast = document.getElementById('toast');
+
+    saveBtn.addEventListener('click', () => {
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    });
+  </script>
+</body>
+</html>
